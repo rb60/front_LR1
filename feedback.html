@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="uk">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Зворотній зв’язок</title>
+    </head>
+    <body>
+        <header>
+            <div>
+                <h1>Всесвітній Житомирський Вісник</h1>
+                <img src="logo.png"/>
+            </div>
+            <nav>
+                <a href="./index.html">Головна сторінка</a>
+                <a href="./cultural-news.html">Новини культури</a>
+            </nav>
+        </header>   
+        <main>
+                <form>
+                    <fieldset>
+                        <legend>Персональна інформація</legend>
+                        <label for="name">Прізвище та ім'я:</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                        /><br />
+
+                        <label for="email">E-mail:</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                        /><br />
+
+                        <label for="age">Вік:</label>
+                        <input
+                            type="number"
+                            id="age"
+                            name="age"
+                            min="18"
+                            max="120"
+                        /><br />
+
+                        <label for="education">Освіта:</label>
+                        <select id="education" name="education" required>
+                            <option value="">Виберіть освіту</option>
+                            <option value="повна">повна</option>
+                            <option value="неповна">неповна</option>
+                            <option value="вища">вища</option>
+                            <option value="професійна">професійна</option>
+                        </select>
+                    </fieldset>
+
+                    <label for="purpose">Мета зворотнього зв'язку:</label>
+                    <select id="purpose" name="purpose" required>
+                        <option value="">Виберіть мету</option>
+                        <option value="співпраця">співпраця</option>
+                        <option value="скарга">
+                            скарга на порушення права власності
+                        </option>
+                        <option value="пропозиція">пропозиція</option>
+                        <option value="помилка">
+                            наявність помилки
+                        </option></select
+                    ><br />
+
+                    <label for="details">Детально:</label>
+                    <textarea
+                        id="details"
+                        name="details"
+                        rows="5"
+                        cols="50"
+                        required
+                    ></textarea
+                    ><br />
+
+                    <input
+                        type="checkbox"
+                        id="consent"
+                        name="consent"
+                        required
+                    />
+                    <label for="consent"
+                        >Погоджуюсь на обробку персональних даних</label
+                    ><br />
+
+                    <input type="submit" value="Відправити" />
+                </form>
+        </main>
+        <footer>
+            Адреса: Житомир, вулиця Герцена 22
+            Телефон: 285-89-51
+            <a href="https://t.me/Darks_soulse">Головний редактор</a>
+            <a href="https://uk.wikipedia.org/wiki/%D0%A5%D1%96%D0%B4%D0%B5%D0%BE_%D0%9A%D0%BE%D0%B4%D0%B7%D1%96%D0%BC%D0%B0">Геній</a>
+        </footer>
+    </body>
+</html>
