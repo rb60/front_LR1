@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <title>Зворотній зв’язок</title>
+        <link rel="stylesheet" href="styles.css"/>
     </head>
     <body>
         <header>
@@ -16,76 +17,92 @@
             </nav>
         </header>   
         <main>
-                <form>
-                    <fieldset>
+                <form class="form standart-container">
+                    <fieldset class="standart-container">
                         <legend>Персональна інформація</legend>
-                        <label for="name">Прізвище та ім'я:</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            required
-                        /><br />
+                        <div class="input-container">
+                            <label for="name">Прізвище та ім'я:</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                required
+                            />
+                        </div>
 
-                        <label for="email">E-mail:</label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            required
-                        /><br />
+                        <div class="input-container">
+                            <label for="email">E-mail:</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                            />
+                        </div>
 
-                        <label for="age">Вік:</label>
-                        <input
-                            type="number"
-                            id="age"
-                            name="age"
-                            min="18"
-                            max="120"
-                        /><br />
+                        <div class="input-container">
+                            <label for="age">Вік:</label>
+                            <input
+                                type="number"
+                                id="age"
+                                name="age"
+                                min="18"
+                                max="120"
+                            />
+                        </div>
+                        
+                        <div class="input-container">
+                            <label for="education">Освіта:</label>
+                            <select id="education" name="education" required>
+                                <option value="">Виберіть освіту</option>
+                                <option value="повна">повна</option>
+                                <option value="неповна">неповна</option>
+                                <option value="вища">вища</option>
+                                <option value="професійна">професійна</option>
+                            </select>
+                        </div>
 
-                        <label for="education">Освіта:</label>
-                        <select id="education" name="education" required>
-                            <option value="">Виберіть освіту</option>
-                            <option value="повна">повна</option>
-                            <option value="неповна">неповна</option>
-                            <option value="вища">вища</option>
-                            <option value="професійна">професійна</option>
-                        </select>
+                        
                     </fieldset>
 
-                    <label for="purpose">Мета зворотнього зв'язку:</label>
-                    <select id="purpose" name="purpose" required>
-                        <option value="">Виберіть мету</option>
-                        <option value="співпраця">співпраця</option>
-                        <option value="скарга">
-                            скарга на порушення права власності
-                        </option>
-                        <option value="пропозиція">пропозиція</option>
-                        <option value="помилка">
-                            наявність помилки
-                        </option></select
-                    ><br />
+                    <div class="input-container">
+                        <label for="purpose">Мета зворотнього зв'язку:</label>
+                        <select id="purpose" name="purpose" required>
+                            <option value="">Виберіть мету</option>
+                            <option value="співпраця">співпраця</option>
+                            <option value="скарга">
+                                скарга на порушення права власності
+                            </option>
+                            <option value="пропозиція">пропозиція</option>
+                            <option value="помилка">
+                                наявність помилки
+                            </option>
+                        </select>
+                    </div>
+                    
 
-                    <label for="details">Детально:</label>
-                    <textarea
-                        id="details"
-                        name="details"
-                        rows="5"
-                        cols="50"
-                        required
-                    ></textarea
-                    ><br />
-
-                    <input
+                    <div class="input-container">
+                        <label for="details">Детально:</label>
+                        <textarea
+                            id="details"
+                            name="details"
+                            rows="5"
+                            cols="50"
+                            required
+                        ></textarea>
+                    </div>
+                    
+                    <div class="input-container">
+                        <label for="consent"
+                            >Погоджуюсь на обробку персональних даних</label
+                        >
+                        <input
                         type="checkbox"
                         id="consent"
                         name="consent"
                         required
-                    />
-                    <label for="consent"
-                        >Погоджуюсь на обробку персональних даних</label
-                    ><br />
+                        />
+                    </div>
 
                     <input type="submit" value="Відправити" />
                 </form>

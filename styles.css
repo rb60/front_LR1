@@ -1,0 +1,201 @@
+/* ===== ЗАГАЛЬНІ СТИЛІ ===== */
+
+/* 1. Селектор елементу ('a') та 2. Колір за назвою ('black') */
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/* Псевдо-клас ':hover' та колір за назвою ('white') */
+a:hover {
+    color: white;
+}
+
+/* Псевдо-клас ':active' та 3. Колір HEX ('#ff8c00') */
+a:active {
+    color: #ff8c00;
+}
+
+/* 4. Селектор атрибута з частковим значенням [href*="..."] */
+/* Цей селектор знаходить посилання, в адресі якого є слово "wikipedia" */
+a[href*="./index.html"] {
+    font-weight: bold;
+}
+
+
+
+/* - Селектор елементу ('body')
+   - Встановлення шрифту (Вимога "шрифт")
+   - Встановлення фону (Вимога "фон" з використанням градієнта)
+   - Колір задано через RGBA (Вимога "колір")
+*/
+body {
+    min-height: 100vh;
+    font-family: 'Comic Sans MS', cursive; /* Додано альтернативний шрифт */
+    background: linear-gradient(135deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
+
+/* 5. Селектор класу ('.standart-container') */
+.standart-container {
+    background-color: rgba(255, 255, 255, 0.3); /* Колір RGBA */
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+
+/* ===== ШАПКА САЙТУ ===== */
+
+
+
+.site-name {
+    left: 0;
+    top: 0;
+    opacity: 50%;
+}
+
+/* 6. Анімація (за допомогою @keyframes) */
+/* Описуємо саму анімацію: легка зміна розміру тексту */
+@keyframes pulse-text {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Комбінатор нащадка (' '): вибираємо h1 всередині .site-name */
+.site-name h1 {
+    animation-name: pulse-text;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+
+.navigation {
+    display: flex;
+    justify-content: end;
+}
+
+/* 7. Комбінатор дочірнього елемента ('>') */
+/* Стиль застосовується тільки до 'a', які є прямими нащадками '.navigation' */
+.navigation > a {
+    margin: 0 10px;
+}
+
+
+/* ===== ОСНОВНИЙ КОНТЕНТ ===== */
+
+.main-container {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+
+.article-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 3%;
+}
+
+.article {
+    /* Колір задано через HSL (Вимога "колір") */
+    border-color: hsl(350, 72%, 29%); /* Той самий колір #7f1425, але в іншому форматі */
+    border-style: solid;
+    border-width: 7px;
+    border-left-style: dashed;
+}
+
+.author {
+    font-style: italic;
+    font-size: smaller;
+    font-weight: lighter;
+}
+
+.article-image {
+    transition-duration: 1s;
+    width: 100%;
+}
+
+.article-image:hover {
+    filter: invert(100%);
+}
+
+.our-mision {
+    position: relative;
+    top: 175px;
+    height: 200px;
+    margin: 5px;
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+.chief-editor {
+    position: relative;
+    transition: 1s;
+    right: 0;
+    bottom: 0;
+}
+
+.chief-editor:hover {
+    right: 5px;
+    bottom: 5px;
+    background-color: white;
+}
+
+.chief-photo {
+    float: right;
+}
+
+/* Псевдо-елемент '::first-line' */
+.chief-editor-info::first-line {
+    font-style: italic;
+}
+
+
+/* 8. Селектор ID ('#hot-news') */
+/* Цей селектор знаходить унікальний елемент з id="hot-news" */
+#hot-news {
+    border-top: 2px solid rgba(128, 128, 128, 0.5);
+}
+
+/* 9. Комбінатор суміжного сусіда ('+') */
+/* Стиль застосовується до параграфа 'p', який йде одразу після заголовка 'h3' */
+h3 + p {
+    line-height: 1.5; /* Збільшуємо міжрядковий інтервал для кращої читабельності */
+}
+
+
+/* ===== ФОРМА ТА ПІДВАЛ ===== */
+
+/* 10. Селектор атрибута ('[tabindex]') */
+/* Замість класу .contact-info, вибираємо елемент за наявністю атрибута 'tabindex' */
+footer[tabindex] {
+    transition-delay: 3s;
+    transition-duration: 1s;
+    width: 60%;
+    text-align: center;
+    margin-top: 20px; /* Додамо відступ зверху */
+}
+
+/* Псевдо-клас ':focus' для інтерактивності 
+   11. 2D трансформація (Вимога "2D трансформація" за допомогою scale та translate)
+*/
+footer[tabindex]:focus {
+    transform: scale(1.2) translate(8%);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
